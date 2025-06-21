@@ -7,7 +7,10 @@
 이 프로젝트는 [채널톡](https://api-doc.channel.io/) 의 OPEN API를 활용하여 Model Context Protocol(MCP)과 연동하는 도구입니다.
 이를 통해 AI 어시스턴트가 채널톡의 채팅 정보에 접근하고 활용할 수 있습니다.
 
+<a href="https://www.npmjs.com/package/mcp-channel-io"><img src="https://img.shields.io/npm/v/mcp-channel-io.svg" alt="NPM Version" /></a>
 <a href="https://smithery.ai/server/@scarfunk/mcp-channel-io"><img src="https://smithery.ai/badge/@scarfunk/mcp-channel-io" alt="Smithery.ai Downloads" /></a>
+
+[![en](https://img.shields.io/badge/English-README.md-blue)](docs/README.en.md)
 
 ## 설명
 
@@ -31,6 +34,31 @@
 
 MCP 클라이언트 (Claude Desktop 등)에서 사용할 때는 다음과 같이 설정합니다:
 
+#### npx 사용 (recommended)
+
+```json
+{
+  "mcpServers": {
+    "mcp-channel-io": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-channel-io",
+        "--",
+        "--access-key",
+        "YOUR_ACCESS_KEY",
+        "--secret-key",
+        "YOUR_SECRET_KEY",
+        "--ssl-off" // NODE_TLS_REJECT_UNAUTHORIZED
+      ]
+    }
+  }
+}
+```
+
+<details>
+<summary>smithery 사용</summary>
+
 ```json
 {
   "mcpServers": {
@@ -50,6 +78,8 @@ MCP 클라이언트 (Claude Desktop 등)에서 사용할 때는 다음과 같이
   }
 }
 ```
+
+</details>
 
 ## 로컬 개발 설정
 
