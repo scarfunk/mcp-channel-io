@@ -1,6 +1,7 @@
 {
   "type": "module",
   "name": "mcp-channel-io",
+  "repository": "https://github.com/scarfunk/mcp-channel-io",
   "version": "1.0.7",
   "main": "index.js",
   "bin": {
