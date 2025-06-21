@@ -1,5 +1,7 @@
 # 채널톡 MCP 도구 (mcp-channel-talk, mcp-channel-io)
 
+[![smithery badge](https://smithery.ai/badge/@scarfunk/mcp-channel-io)](https://smithery.ai/server/@scarfunk/mcp-channel-io)
+
 ## 개요
 
 비공식 채널톡 MCP 도구입니다.
@@ -31,6 +33,15 @@
 
 MCP 클라이언트 (Claude Desktop 등)에서 사용할 때는 다음과 같이 설정합니다:
 
+### Installing via Smithery
+
+To install mcp-channel-io for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@scarfunk/mcp-channel-io):
+
+```bash
+npx -y @smithery/cli install @scarfunk/mcp-channel-io --client claude
+```
+
+### Manual Configuration
 ```json
 {
   "mcpServers": {
