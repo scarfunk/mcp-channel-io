@@ -7,6 +7,8 @@
 이 프로젝트는 [채널톡](https://api-doc.channel.io/) 의 OPEN API를 활용하여 Model Context Protocol(MCP)과 연동하는 도구입니다.
 이를 통해 AI 어시스턴트가 채널톡의 채팅 정보에 접근하고 활용할 수 있습니다.
 
+<a href="https://smithery.ai/server/@scarfunk/mcp-channel-io"><img src="https://smithery.ai/badge/@scarfunk/mcp-channel-io" alt="Smithery.ai Downloads" /></a>
+
 ## 설명
 
 ### 구현 기능
@@ -33,31 +35,17 @@ MCP 클라이언트 (Claude Desktop 등)에서 사용할 때는 다음과 같이
 {
   "mcpServers": {
     "channel-io": {
-      "command": "node",
+      "command": "npx",
       "args": [
-        "/path/to/YOUR-PROJECT-DIR/build/index.js",
-        "--access-key",
-        "YOUR_ACCESS_KEY",
-        "--secret-key",
-        "YOUR_SECRET_KEY"
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@scarfunk/mcp-channel-io",
+        "--key",
+        "your-smithery-key...",
+        "--profile",
+        "your-profile-name..."
       ]
-    }
-  }
-}
-```
-
-또는 환경변수를 사용하여:
-
-```json
-{
-  "mcpServers": {
-    "channel-io": {
-      "command": "node",
-      "args": ["/path/to/YOUR-PROJECT-DIR/build/index.js"],
-      "env": {
-        "CHANNEL_TALK_X_ACCESS_KEY": "YOUR_ACCESS_KEY",
-        "CHANNEL_TALK_X_ACCESS_SECRET": "YOUR_SECRET_KEY"
-      }
     }
   }
 }
@@ -73,6 +61,24 @@ npm install
 
 # 빌드
 npm run build
+```
+
+```json
+// 로컬서버로 .cursor/mcp.json 에 넣고 싶으면 아래 처럼 추가.
+{
+  "mcpServers": {
+    "channel-io": {
+      "command": "node",
+      "args": [
+        "/path/to/YOUR-PROJECT-DIR/build/index.js",
+        "--access-key",
+        "YOUR_ACCESS_KEY...",
+        "--secret-key",
+        "YOUR_SECRET_KEY..."
+      ]
+    }
+  }
+}
 ```
 
 ### 1. CLI 인자로 실행 (권장)
