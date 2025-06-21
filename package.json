@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "mcp-channel-io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "mcp-channel-io": "./build/index.js"
