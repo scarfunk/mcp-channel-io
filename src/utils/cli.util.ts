@@ -3,6 +3,10 @@ export function parseCliArgs() {
   const args = process.argv.slice(2);
   const options: { [key: string]: string } = {};
 
+  if (args.includes("--ssl-off")) {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  }
+
   // --help 체크
   if (args.includes("--help") || args.includes("-h")) {
     console.log(`
